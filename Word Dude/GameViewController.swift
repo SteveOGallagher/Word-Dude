@@ -30,12 +30,10 @@ extension SKNode {
 class GameViewController: UIViewController {
     
     var backgroundMusicPlayer: AVAudioPlayer!
-
+    
     override func viewDidLoad() {
         
-        
         var backgroundMusicPlayer: AVAudioPlayer!
-
         super.viewDidLoad()
         let scene = GameScene(size: view.bounds.size)
         let skView = view as SKView
@@ -44,15 +42,14 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = false
         scene.scaleMode = .ResizeFill
         skView.presentScene(scene)
-    
     }
     
-
     override func shouldAutorotate() -> Bool {
         return true
     }
 
     override func supportedInterfaceOrientations() -> Int {
+        
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
         } else {
@@ -61,6 +58,7 @@ class GameViewController: UIViewController {
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
@@ -69,11 +67,18 @@ class GameViewController: UIViewController {
         return true
     }
     
+    // When the first scene loads onto the device, the background music "WordDudeBG.mp3" will play.
     override func viewDidAppear(animated: Bool) {
+        
+        // The URL for the music file is retrieved
         let backgroundMusicURL = NSBundle.mainBundle().URLForResource("WordDudeBG.mp3", withExtension: nil)
+        
+        // The parameters for the music player system are declared
         backgroundMusicPlayer = AVAudioPlayer(contentsOfURL: backgroundMusicURL, error:nil)
         backgroundMusicPlayer.numberOfLoops = -1
         backgroundMusicPlayer.prepareToPlay()
+        
+        // The music will begin to play when the next line is executed.
         backgroundMusicPlayer.play()
     }
 

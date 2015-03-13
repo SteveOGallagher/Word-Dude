@@ -29,13 +29,4 @@ class C: SKNode {
         
     }
     
-    func makeStars () {
-        let emitter = SKEmitterNode(fileNamed: "Stars")
-        emitter.particleTexture!.filteringMode = .Nearest
-        emitter.targetNode = parent
-        emitter.zPosition = 100
-        emitter.runAction(SKAction.removeFromParentAfterDelay(1.0))
-        addChild(emitter)
-    }
-    
 }
