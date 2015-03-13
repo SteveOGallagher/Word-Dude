@@ -6,7 +6,7 @@ struct PhysicsCategory {
     static let All : UInt32 = UInt32.max
     static let Boundary : UInt32 = 0b1
     static let Player : UInt32 = 0b10
-    static let Letter : UInt32 = 0b100
+    static let R : UInt32 = 0b100
     static let O : UInt32 = 0b1000
     static let C : UInt32 = 0b10000
     static let K : UInt32 = 0b100000

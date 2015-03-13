@@ -20,6 +20,7 @@ class Baddie : SKNode {
         emitter.particleTexture!.filteringMode = .Nearest
         
         super.init()
+    
         
         emitter.targetNode = parent
         addChild(emitter)

@@ -421,7 +421,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameState = .InLevelMenu
     }
     
-    private var RsToRemove: [Letter] = []
     private var AsToRemove: [A] = []
     private var BsToRemove: [B] = []
     private var CsToRemove: [C] = []
@@ -435,6 +434,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var NsToRemove: [N] = []
     private var OsToRemove: [O] = []
     private var PsToRemove: [P] = []
+    private var RsToRemove: [R] = []
     private var SsToRemove: [S] = []
     private var TsToRemove: [T] = []
     private var UsToRemove: [U] = []
@@ -446,7 +446,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let other = (contact.bodyA.categoryBitMask == PhysicsCategory.Player ?
         contact.bodyB : contact.bodyA)
         switch other.categoryBitMask {
-            case PhysicsCategory.Letter: RsToRemove.append(other.node as Letter)
             case PhysicsCategory.A: AsToRemove.append(other.node as A)
             case PhysicsCategory.B: BsToRemove.append(other.node as B)
             case PhysicsCategory.C: CsToRemove.append(other.node as C)
@@ -460,6 +459,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             case PhysicsCategory.N: NsToRemove.append(other.node as N)
             case PhysicsCategory.O: OsToRemove.append(other.node as O)
             case PhysicsCategory.P: PsToRemove.append(other.node as P)
+            case PhysicsCategory.R: RsToRemove.append(other.node as R)
             case PhysicsCategory.S: SsToRemove.append(other.node as S)
             case PhysicsCategory.T: TsToRemove.append(other.node as T)
             case PhysicsCategory.U: UsToRemove.append(other.node as U)
@@ -1564,14 +1564,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             checkWinner()
         }
         if !RsToRemove.isEmpty {
-            for letter in RsToRemove {
+            for R in RsToRemove {
                 let rotate = SKAction.rotateByAngle(CGFloat(M_PI), duration:0.5)
                 let scaleDown = SKAction.scaleTo(0, duration: 0.5)
                 let scaleInBox = SKAction.scaleTo(1, duration: 1)
                 let remove = SKAction.removeFromParent()
                 let sequence = SKAction.sequence([rotate, remove])
                 
-                letter.runAction(remove)
+                R.runAction(remove)
                 
                 RsToRemove.removeAll()
                 addRToHUD()

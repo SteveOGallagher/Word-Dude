@@ -25,7 +25,7 @@ class Player : SKNode {
         emitter2 = SKEmitterNode(fileNamed: "Stars")
         emitter2.particleTexture!.filteringMode = .Nearest
         
-        super.init()
+        super.init() //change
         
         addChild(sprite)
         name = "player"

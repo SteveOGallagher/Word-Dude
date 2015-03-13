@@ -69,7 +69,7 @@ class TileMapLayer : SKNode {
             case "y":
                 tile = Y()
             case "r":
-                tile = Letter()
+                tile = R()
             case "?":
                 tile = Moon()
             case "-":

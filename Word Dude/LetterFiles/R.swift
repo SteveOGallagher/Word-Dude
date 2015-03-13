@@ -24,7 +24,7 @@ class R: SKNode {
         
         var radius = min(sprite.size.width, sprite.size.height) / 2
         physicsBody = SKPhysicsBody(circleOfRadius: radius)
-        physicsBody!.categoryBitMask = PhysicsCategory.Letter
+        physicsBody!.categoryBitMask = PhysicsCategory.R
         physicsBody!.collisionBitMask = PhysicsCategory.None
         
     }
