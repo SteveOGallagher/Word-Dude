@@ -1,7 +1,5 @@
 struct PhysicsCategory {
     
-
-    
     static let None : UInt32 = 0
     static let All : UInt32 = UInt32.max
     static let Boundary : UInt32 = 0b1
@@ -19,18 +17,16 @@ struct PhysicsCategory {
     static let A : UInt32 = 0b1000000000000
     static let N : UInt32 = 0b10000000000000
     static let H : UInt32 = 0b100000000000000
-    static let Moon : UInt32 = 0b1000000000000000
-    static let EnemyLaser : UInt32 = 0b10000000000000000
-    static let Rocket : UInt32 = 0b100000000000000000
-    static let Baddie: UInt32 = 0b1000000000000000000
-    static let B: UInt32 = 0b10000000000000000000
-    static let I: UInt32 = 0b100000000000000000000
-    static let G: UInt32 = 0b1000000000000000000000
-    static let U: UInt32 = 0b10000000000000000000000
-    static let X: UInt32 = 0b100000000000000000000000
-    static let Y: UInt32 = 0b1000000000000000000000000
-    
-    
+    static let B : UInt32 = 0b1000000000000000
+    static let I : UInt32 = 0b10000000000000000
+    static let G : UInt32 = 0b100000000000000000
+    static let U : UInt32 = 0b1000000000000000000
+    static let X : UInt32 = 0b10000000000000000000
+    static let Y : UInt32 = 0b100000000000000000000
+    static let Moon : UInt32 = 0b1000000000000000000000
+    static let EnemyLaser : UInt32 = 0b10000000000000000000000
+    static let Rocket : UInt32 = 0b100000000000000000000000
+    static let Baddie: UInt32 = 0b1000000000000000000000000
 }
 
 enum GameState {

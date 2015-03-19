@@ -1,7 +1,6 @@
 import SpriteKit
 
 class Moon : SKNode {
-    
     let sprite: SKSpriteNode
     
     required init?(coder aDecoder: NSCoder) {
@@ -11,7 +10,6 @@ class Moon : SKNode {
         let atlas = SKTextureAtlas(named: "scenery")
         let texture = atlas.textureNamed("moon")
         texture.filteringMode = .Nearest
-        
         sprite = SKSpriteNode(texture: texture)
         
         super.init()
@@ -24,7 +22,5 @@ class Moon : SKNode {
         physicsBody!.categoryBitMask = PhysicsCategory.Moon
         physicsBody!.categoryBitMask = PhysicsCategory.Boundary
         physicsBody!.collisionBitMask = PhysicsCategory.Boundary
-        
     }
-    
 }

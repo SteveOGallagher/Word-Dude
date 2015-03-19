@@ -1,7 +1,6 @@
 import SpriteKit
 
 class M: SKNode {
-    
     let sprite: SKSpriteNode
     
     required init?(coder aDecoder: NSCoder) {
@@ -12,12 +11,9 @@ class M: SKNode {
         let atlas = SKTextureAtlas(named: "letters")
         let texture = atlas.textureNamed("M")
         texture.filteringMode = .Nearest
-        
-        
         sprite = SKSpriteNode(texture: texture)
+        
         super.init()
-        
-        
         
         addChild(sprite)
         name = "M"
@@ -26,8 +22,5 @@ class M: SKNode {
         physicsBody = SKPhysicsBody(circleOfRadius: radius)
         physicsBody!.categoryBitMask = PhysicsCategory.M
         physicsBody!.collisionBitMask = PhysicsCategory.None
-        
     }
-    
-    
 }

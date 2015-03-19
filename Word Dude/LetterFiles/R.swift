@@ -1,23 +1,18 @@
 import SpriteKit
 
 class R: SKNode {
-    
     let sprite: SKSpriteNode
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
     override init() {
-        
         let atlas = SKTextureAtlas(named: "letters")
         let texture = atlas.textureNamed("R")
         texture.filteringMode = .Nearest
-        
-        
         sprite = SKSpriteNode(texture: texture)
+        
         super.init()
-        
-        
         
         addChild(sprite)
         name = "R"
@@ -26,8 +21,5 @@ class R: SKNode {
         physicsBody = SKPhysicsBody(circleOfRadius: radius)
         physicsBody!.categoryBitMask = PhysicsCategory.R
         physicsBody!.collisionBitMask = PhysicsCategory.None
-        
     }
-    
-    
 }
